@@ -7,13 +7,13 @@ CPPFlAGS = -g -Wall
 #files to link
 LFLAGS = -lsfml-graphics -lsfml-window -lsfml-system
 
-TARGET = main
+all: main
 
-all: $(TARGET)
+main: game main.cpp 
+	$(CC) $(CPPFlAGS) -o pong $(LFLAGS) main.cpp game.o
 
-$(TARGET) : $(TARGET).cpp
-	$(CC) $(CPPFLAGS) -o pong $(TARGET).cpp $(LFLAGS)
+game: src/game.cpp src/game.hpp
+	$(CC) $(CPPFlAGS) -c src/game.cpp
 
 clean:
-	rm -rf *.o main
-	rm pong
+	rm -rf pong *.o *core *~ *.dSYM
