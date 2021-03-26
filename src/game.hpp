@@ -1,4 +1,10 @@
+#ifndef GAME
+#define GAME
+
 #include <SFML/Graphics.hpp>
+#include <iostream>
+
+#include "paddle.hpp"
 
 class Game {
     private:
@@ -10,3 +16,4 @@ class Game {
 
         void render(); 
 };
+#endif // GAME
